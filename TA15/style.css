@@ -1,0 +1,101 @@
+/*
+
+-> Se aplica a todo el documento.
+-> No hay problema.
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+-> Se aplica a todos los elementos con la clase "para" o "small-para".
+-> No hay problema.
+.para,
+.small-para {
+    color: hsl(0, 0%, 0%);
+    font-weight: 800;
+}
+
+-> Tiene igual especificidad que la regla con el selector '.para' y va antes, por lo tanto, es solapada.
+.small-para {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+-> Solapa a la regla con el selector '.para'.
+.para {
+    font-size: 22px;
+}
+
+-> Tiene igual especificidad que la regla con el selector '.button' y va antes, por lo tanto, es solapada.
+.confirm {
+    background: green;
+    color: white;
+    font-weight: bold;
+}
+
+-> Solapa a la regla con el selector '.confirm'.
+.button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+-> Tiene menor especificidad que la regla con el selector 'div.text', por lo tanto, es solapada.
+.child {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+-> Se aplica a todos los divs con la clase "text".
+div.text {
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font-weight: 100;
+}
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.para,
+.small-para {
+    color: hsl(0, 0%, 0%);
+    font-weight: 800;
+}
+
+/* Solucionado con cascada. (Gana el último) */
+.para {
+    font-size: 22px;
+}
+
+.small-para {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* Solucionado con cascada. (Gana el último) */
+.button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.confirm {
+    background: green;
+    color: white;
+    font-weight: bold;
+}
+
+/* Solucionado con clase.clase vs elemento.clase. (Gana clase.clase) */
+.text.child {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+div.text {
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font-weight: 100;
+}
