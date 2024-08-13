@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(99, 100, 205);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#card {
+    background-color: rgb(227, 198, 53);
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10%;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#avatar {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 35%;
+    height: auto;
+    
+    border-radius: 50%;
+    border: 5px solid  rgb(34, 35, 75);
+}
+
+#button {
+    background-color: rgb(176, 177, 231);
+    font-weight: bold;
+}
